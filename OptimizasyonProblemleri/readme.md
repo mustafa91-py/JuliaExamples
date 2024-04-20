@@ -1,4 +1,49 @@
 # Optimizasyon Problemleri
+#####  toplamları 40 olan iki pozitif tamsayının kareleri toplamı en düşük kaçtır ?
+```jl
+model = Model(Ipopt.Optimizer)
+
+@variable(model, x >= 0)
+@variable(model, y >= 0)
+
+@constraint(model, x + y == 40)
+
+@objective(model, Min, x^2 + y^2)
+
+optimize!(model)
+
+value(x)
+
+value(y)
+objective_value(model)
+
+# y = 40 - x
+
+
+# y^2 = 1600 - 80x + x^2
+
+#y^2 + x^2 = 1600 -80x + 2x^2
+
+
+# f(x) = 1600 - 80x + 2x^2
+
+f(x) = 1600 - 80x + 2*(x^2)
+
+x = 10:30
+
+plotlyjs(size=(1366,768))
+
+p = plot(x, f,
+    title = "x² + y² func grafiği",
+    xlabel = "x değerleri",
+    ylabel = "x² + y² değerleri"
+)
+
+savefig(p,"x+y=40; min(x²+y²).svg")
+
+```
+![soru0](https://github.com/mustafa91-py/JuliaExamples/blob/main/OptimizasyonProblemleri/x%2By%3D40%3B%20min(x%C2%B2%2By%C2%B2).svg)
+
 
 ### [Calculus-I : Optimizasyon Problemleri (Maksimum ve Minimum Problemleri)](https://www.youtube.com/watch?v=q7JTh2eOYlo) 
 [![Reference](https://img.youtube.com/vi/q7JTh2eOYlo/0.jpg)](https://www.youtube.com/watch?v=q7JTh2eOYlo)
