@@ -38,7 +38,7 @@ x = 10:30
 plotlyjs(size=(1366,768))
 
 p = plot(x, f,
-    title = "x² + y² func grafiği",
+    title = "f(x) = 1600- 80x +2x²",
     xlabel = "x değerleri",
     ylabel = "x² + y² değerleri"
 )
