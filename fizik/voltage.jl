@@ -41,6 +41,9 @@ function ohm(a,b)
     return f(a,b)
 end
 
-ohm(R(5),I(4))
-ohm(V(5),R(4))
-ohm(V(5),I(5))
+# örnek kullanim
+# arduino icin 5v gerilimde , led icin direnc hesabi
+res =ohm(V(5),I(0.020))# burda 20 mili amper ile calisan led icin ne kadarlik direnc gerek
+println("kullanim\n
+5v cikisli arduino da 20 mili amper akimla calisan led icin direnc hesabi
+\nohm(V(5),I(0.020)) \ndirenc = $res Ω")
