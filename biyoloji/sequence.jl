@@ -1,6 +1,49 @@
 
+"""
+``` pyton 
+# referans kod (2020)
 
+# https://github.com/mustafa91-py/DNA-gene-sequence-/blob/master/seq.py#L383
 
+def restriction(seq="MustafaUyar", splite="5", specifity=False):
+        ""
+        to splite the sequence
+        :param seq: array to be plotted
+        :param splite: form of parceling
+        :param specifity: attribute
+        :return:list
+        ""
+        splite = int(splite)
+        non_id_rstx_list = []
+        id_rstx_list = []
+        upper = 0
+        _Treu_seq = ""
+        for base in seq:
+            if base != "\n":
+                _Treu_seq += base
+        while upper < splite:
+            restriction = [_Treu_seq[i:i + splite] for i in range(upper, len(seq), splite)]
+            position = 0
+            for base in restriction:
+                if not specifity:
+                    if len(base) == splite:
+                        non_id_rstx_list.append(base)
+                if specifity:
+                    if len(base) == splite:
+                        id_rstx_list.append((str(upper + (splite * position)) +
+                                             " <"
+                                             + base +
+                                             "<= "
+                                             + str(((splite * (position + 1)) - (splite - len(base))) + upper)))
+                position += 1
+            upper += 1
+        if specifity:
+            return id_rstx_list
+        if not specifity:
+            return non_id_rstx_list
+
+```
+"""
 
 struct Fragment
     first::Int64
