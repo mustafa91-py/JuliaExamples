@@ -1,5 +1,4 @@
-dna = "ATGCATatgc"
-length(dna)
+
 
 function parse_dna(dna::String,fragmentation::Int64)
 
@@ -18,8 +17,8 @@ function parse_dna(dna::String,fragmentation::Int64)
     end
 
 
-parse_dna(dna,5)
-sort(parse_dna(dna,5),by=x -> uppercase(x[1]))
+#parse_dna(dna,5)
+#sort(parse_dna(dna,5),by=x -> uppercase(x[1]))
 struct Fragment
     first::Int64
     base::String
@@ -43,8 +42,8 @@ function parse_dna2(dna::String,fragmentation::Int64)
     
         end
         
-@time e = parse_dna2(dna,3)
-@time sort!(e,by=x -> x.last)
+
+#@time sort!(e,by=x -> x.last)
 #=
   0.718372 seconds (10.00 M allocations: 686.646 MiB, 40.65% gc time)
   432.901 ms (10000002 allocations: 686.65 MiB)
